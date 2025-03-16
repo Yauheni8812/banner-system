@@ -20,6 +20,13 @@ class AdSerializer(serializers.ModelSerializer):
     class Meta:
         model = Ad
         fields = '__all__'
+        extra_kwargs = {
+            'campaign': {'label': 'Кампания'},
+            'slot': {'label': 'Рекламный слот'},
+            'image': {'label': 'Изображение'},
+            'target_url': {'label': 'Целевая ссылка'},
+            'is_active': {'label': 'Активно'},
+        }
 
 class ImpressionSerializer(serializers.ModelSerializer):
     class Meta:
